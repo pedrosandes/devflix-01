@@ -28,7 +28,7 @@ const navIcons = [
 
 const NavIcon = (props) => {
   return(
-    <div className="bottom-box">
+    <div className="nav-icon">
         <i>{props.icon}</i>
         <span>{props.children}</span>
       </div>
@@ -37,9 +37,9 @@ const NavIcon = (props) => {
 
 const NavBar = () => {
   return(
-    <div className="bottom-bar">
+    <nav className="nav-bar">
       {navIcons.map( ({name, icon}) => <NavIcon icon={icon}>{name}</NavIcon> )}
-    </div>
+    </nav>
   );
 }
 
