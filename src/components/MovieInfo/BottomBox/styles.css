@@ -1,0 +1,11 @@
+.bottom-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.bottom-box span {
+  margin-top: 2px;
+}
