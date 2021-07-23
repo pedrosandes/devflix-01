@@ -1,17 +1,21 @@
-import { Summary } from '../Summary'
 import { BsPlayFill } from 'react-icons/bs'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { useHistory } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
 import './styles.css'
 
-const MovieContent = ({data}) => {
-  const {image, rating, genres, name, summary} = data;
+const Summary = ({text}) => {
+  return(
+      <div className="movie-summary" dangerouslySetInnerHTML={{__html: text}}/>
+  );
+}
+
+const MovieContent = ({image, rating, genres, name, summary}) => {
   const { goBack } = useHistory()
 
   // Refatorar o código / Otimizar
   return(
-    <div>
+    <div className="movie-content">
       <div className="movie">
          <div className="movie-header">
             <button onClick={goBack} className="btn-close" >
@@ -24,7 +28,9 @@ const MovieContent = ({data}) => {
             </p>
               {genres.map( genero => <p>{genero}</p>)}
           </div>
-             <button className="btn"><BsPlayFill size="32px" color="#fff"/> Continuar</button>
+            <button className="btn">
+               <BsPlayFill size="32px" color="#fff"/> Continuar
+            </button>
          </div>
           <div className="movie-info">
              <p className="movie-name">{name}</p>

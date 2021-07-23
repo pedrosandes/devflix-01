@@ -1,7 +1,6 @@
 import './styles.css'
 
-const BackgroundImage = ({data}) => {
-  const image = data.image.original
+const BackgroundImage = ({image}) => {
   return(
     <div className="background-img">
       <img src={image} alt="" />
