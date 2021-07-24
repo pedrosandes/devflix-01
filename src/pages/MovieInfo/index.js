@@ -9,10 +9,11 @@ const MovieInfo = () => {
   const [show, setShow] = useState({})
   
   useEffect(async () => {
-    setShow(await getShow(4)) 
+    setShow(await getShow()) 
   }, [])
   
   // Se não tiver o id, fica na pagina de loading
+  // Fazer um componente para Loading...
   if(!show.id) return (<p>Loading...</p>)
 
   // Desestruturo o show para ficar melhor.
@@ -20,7 +21,7 @@ const MovieInfo = () => {
     
      // BackgroundImage - Cria o efeito de background
       // MovieContent - É o conteúdo da página em si
-      // BottomBar - É o menu inferior
+      // NavBar - É o menu inferior
   
   return(
     <>
