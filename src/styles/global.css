@@ -10,5 +10,17 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: #000;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100%;
 }
