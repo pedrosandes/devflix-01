@@ -1,46 +1,73 @@
-import { 
-  AiOutlinePlus, 
-  AiOutlineLike, 
-  AiOutlineShareAlt,
-  AiOutlineUserAdd } from 'react-icons/ai'
+import homeIcon from '../../../assets/icons/home.svg';
+import searchIcon from '../../../assets/icons/search.svg';
+import soonIcon from '../../../assets/icons/soon.svg';
+import downloadIcon from '../../../assets/icons/download.svg';
+import moreIcon from '../../../assets/icons/more.svg';
+import { Link } from 'react-router-dom';
 
-import './styles.css'
+import './styles.css';
 
 const navIcons = [
   {
-    name: 'Adicionar à lista',
-    icon: <AiOutlinePlus size="25px" color="#E6E6E6"/>,
+    name: 'Home',
+    icon: homeIcon,
+    width: '23.87',
+    height: '20.35',
   },
   {
-    name: 'Classifique',
-    icon: <AiOutlineLike size="25px" color="#E6E6E6"/>,
+    name: 'Search',
+    icon: searchIcon,
+    width: '19.38',
+    height: '20.1',
   },
   {
-    name: 'Compartilhe',
-    icon: <AiOutlineShareAlt size="25px" color="#E6E6E6"/>,
+    name: 'Coming Soon',
+    icon: soonIcon,
+    width: '22',
+    height: '23',
   },
   {
-    name: 'Indique à um amigo',
-    icon: <AiOutlineUserAdd size="25px" color="#E6E6E6"/>,
-  }
-
-]
+    name: 'Downloads',
+    icon: downloadIcon,
+    width: '20',
+    height: '24.62',
+  },
+  {
+    name: 'More',
+    icon: moreIcon,
+    width: '19',
+    height: '14',
+  },
+];
 
 const NavIcon = (props) => {
-  return(
-    <div className="nav-icon">
-        <i>{props.icon}</i>
+  return (
+    <li>
+      <Link className="nav-icon">
+        <img
+          width={props.width}
+          height={props.height}
+          src={props.icon}
+          alt="Icon"
+        />
         <span>{props.children}</span>
-      </div>
+      </Link>
+    </li>
   );
-}
+};
 
 const NavBar = () => {
-  return(
-    <nav className="nav-bar">
-      {navIcons.map( ({name, icon}) => <NavIcon icon={icon}>{name}</NavIcon> )}
+  return (
+    <nav>
+      <ul className="nav-bar">
+        {navIcons.map(({ name, icon, width, height }) => (
+          <NavIcon width={width} height={height} icon={icon}>
+            {name}
+          </NavIcon>
+        ))}
+      </ul>
     </nav>
   );
-}
+};
 
-export { NavBar }
+export { NavBar };
