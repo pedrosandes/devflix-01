@@ -1,5 +1,5 @@
 // Faz a requisição de 1 filme/serie/show
-const getShow = async (id = 4) => {
+const getShow = async (id = 33) => {
   const data = await fetch(`https://api.tvmaze.com/shows/${id}`);
   const response = await data.json();
   return response;

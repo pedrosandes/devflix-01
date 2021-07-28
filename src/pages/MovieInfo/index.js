@@ -21,7 +21,7 @@ const MovieInfo = () => {
   if (!show.id) return <p>Loading...</p>;
 
   // Desestruturo o show para ficar melhor.
-  const { id, image, rating, premiered, runtime } = show;
+  const { image, rating, premiered, runtime } = show;
 
   const ratingInPercent = (rating) => {
     const numberInString = rating.toString();
