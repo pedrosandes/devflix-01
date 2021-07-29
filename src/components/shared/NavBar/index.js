@@ -3,7 +3,6 @@ import searchIcon from '../../../assets/icons/search.svg';
 import soonIcon from '../../../assets/icons/soon.svg';
 import downloadIcon from '../../../assets/icons/download.svg';
 import moreIcon from '../../../assets/icons/more.svg';
-import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -42,16 +41,14 @@ const navIcons = [
 
 const NavIcon = (props) => {
   return (
-    <li>
-      <Link className="nav-icon">
-        <img
-          width={props.width}
-          height={props.height}
-          src={props.icon}
-          alt="Icon"
-        />
-        <span>{props.children}</span>
-      </Link>
+    <li className="nav-icon">
+      <img
+        width={props.width}
+        height={props.height}
+        src={props.icon}
+        alt="Icon"
+      />
+      <span>{props.children}</span>
     </li>
   );
 };
@@ -61,7 +58,7 @@ const NavBar = () => {
     <nav>
       <ul className="nav-bar">
         {navIcons.map(({ name, icon, width, height }) => (
-          <NavIcon width={width} height={height} icon={icon}>
+          <NavIcon key={name} width={width} height={height} icon={icon}>
             {name}
           </NavIcon>
         ))}

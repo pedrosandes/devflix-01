@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getShow } from '../../api/movies';
-import { NavBar } from '../../components/movieInfo/NavBar';
+import { NavBar } from '../../components/shared/NavBar';
 import { AiOutlineArrowLeft, AiOutlineLike } from 'react-icons/ai';
 import { BiPlay } from 'react-icons/bi';
 import { IoShareSocialSharp } from 'react-icons/io5';
@@ -12,8 +12,11 @@ import './styles.css';
 const MovieInfo = () => {
   const [show, setShow] = useState({});
 
-  useEffect(async () => {
-    setShow(await getShow());
+  useEffect(() => {
+    const fetchShow = async () => {
+      setShow(await getShow());
+    };
+    fetchShow();
   }, []);
 
   // Se não tiver o id, fica na pagina de loading
@@ -21,7 +24,7 @@ const MovieInfo = () => {
   if (!show.id) return <p>Loading...</p>;
 
   // Desestruturo o show para ficar melhor.
-  const { id, image, rating, premiered, runtime } = show;
+  const { image, rating, premiered, runtime } = show;
 
   const ratingInPercent = (rating) => {
     const numberInString = rating.toString();
@@ -35,7 +38,7 @@ const MovieInfo = () => {
 
   return (
     <div id="hero">
-      <div className="background-image">
+      <div className="background-image bg-image-blur ">
         <img src={image.original} alt="Background" />
       </div>
       <main className="c-main">
