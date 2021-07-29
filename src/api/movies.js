@@ -2,7 +2,24 @@
 const SHOW_URL = 'https://api.tvmaze.com/shows/';
 const SHOWS_URL = 'https://api.tvmaze.com/shows';
 
-const getShow = async (id = 33) => {
+const getShow = async (id = 50) => {
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+  };
+
+  try {
+    const data = await fetch(SHOW_URL + id, requestOptions);
+    const response = await data.json();
+    return response;
+  } catch (error) {
+    return console.log('Error =>' + error);
+  }
+};
+
+// Faz a requisição para mostrar a capa aleatória!
+
+const getCapeShow = async (id) => {
   const requestOptions = {
     method: 'GET',
     redirect: 'follow',
@@ -33,4 +50,4 @@ const getShows = async () => {
   }
 };
 
-export { getShow, getShows };
+export { getShow, getShows, getCapeShow };

@@ -55,8 +55,8 @@ const NavIcon = (props) => {
 
 const NavBar = () => {
   return (
-    <nav>
-      <ul className="nav-bar">
+    <nav className="nav-bar">
+      <ul className="nav-list">
         {navIcons.map(({ name, icon, width, height }) => (
           <NavIcon key={name} width={width} height={height} icon={icon}>
             {name}
