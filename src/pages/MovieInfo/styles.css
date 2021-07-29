@@ -13,6 +13,9 @@
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.background-image.bg-image-blur {
   filter: blur(20px);
 }
 
