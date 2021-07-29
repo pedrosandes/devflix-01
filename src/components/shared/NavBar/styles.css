@@ -1,21 +1,26 @@
 /* Nav-bar */
-nav {
-  height: 1px;
-}
 .nav-bar {
+  width: 100%;
   position: fixed;
   z-index: 3;
-  bottom: 0px;
-  width: 100%;
+  bottom: -1px;
   padding: 0px 34px 0px 28px;
   box-sizing: border-box;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   height: 58px;
 
   background: #171717;
+}
+
+.nav-bar .nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 29px;
 }
 
 .nav-icon {

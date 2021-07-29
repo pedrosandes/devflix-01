@@ -44,7 +44,7 @@ const MovieInfo = () => {
       <main className="c-main">
         <div className="main-card">
           <div className="arrow-back">
-            <AiOutlineArrowLeft color="#fff" size="22px" />
+            <AiOutlineArrowLeft color="#fff" size="20px" />
           </div>
           <div className="card-show">
             <img
